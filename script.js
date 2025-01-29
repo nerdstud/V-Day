@@ -11,7 +11,8 @@ function selectOption(option) {
         });
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
-        document.getElementById('no-button').innerText = 'You sure?'; 
+        document.getElementById('no-button').innerText = 'You sure?';
+        displayCatCrying(); // Display the cat-crying.gif
         // Increase font size of "Yes" button
         var yesButton = document.getElementById('yes-button');
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
@@ -37,7 +38,7 @@ function flashRainbowColors(callback) {
         if (callback) {
             callback();
         }
-    }, 2000); // Flash colors for 2 seconds
+    }, 1000); // Flash colors for 1 second
 }
 
 // Function to display the cat.gif initially
