@@ -22,7 +22,7 @@ body {
 
 #question {
     font-family: 'Arial', cursive; /* Apply Arial font to the question */
-    font-size: 52px; /* Set font size for the question */
+    font-size: 40px; /* Set font size for the question */
 }
 
 #options {
