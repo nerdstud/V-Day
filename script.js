@@ -5,7 +5,7 @@ function selectOption(option) {
     // Check which option was clicked
     if (option === 'yes') {
         // Flash rainbow colors
-        flashRainbowColors(function() {
+        flashRainbowColors(function () {
             document.getElementById('question').style.display = 'none'; // Hide the question
             displayCatHeart(); // Display the cat-heart1.gif
         });
@@ -13,7 +13,7 @@ function selectOption(option) {
         // Change text on the "No" button to "You sure?"
         document.getElementById('no-button').innerText = 'You sure?';
         displayCatCrying(); // Display the cat-crying.gif
-        
+
         // Increase font size of "Yes" button
         var yesButton = document.getElementById('yes-button');
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
@@ -29,11 +29,11 @@ function selectOption(option) {
 function flashRainbowColors(callback) {
     var colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
     var i = 0;
-    var interval = setInterval(function() {
+    var interval = setInterval(function () {
         document.body.style.backgroundColor = colors[i];
         i = (i + 1) % colors.length;
     }, 200); // Change color every 200 milliseconds
-    setTimeout(function() {
+    setTimeout(function () {
         clearInterval(interval);
         document.body.style.backgroundColor = ''; // Reset background color
         if (callback) {
@@ -53,7 +53,7 @@ function displayCat() {
     // Set alternative text for the image (for accessibility)
     catImage.alt = 'Cat';
     // When the cat image is fully loaded, add it to the image container
-    catImage.onload = function() {
+    catImage.onload = function () {
         imageContainer.appendChild(catImage);
     };
 }
@@ -71,7 +71,7 @@ function displayCatHeart() {
     // Set alternative text for the image (for accessibility)
     catHeartImage.alt = 'Cat Heart';
     // When the cat-heart1 image is fully loaded, add it to the image container
-    catHeartImage.onload = function() {
+    catHeartImage.onload = function () {
         imageContainer.appendChild(catHeartImage);
         // Hide the options container
         document.getElementById('options').style.display = 'none';
@@ -90,12 +90,30 @@ function displayCatCrying() {
     catCryingImage.src = 'cat-crying.gif'; // Assuming the cat-crying image is named "cat-crying.gif"
     // Set alternative text for the image (for accessibility)
     catCryingImage.alt = 'Cat Crying';
-    
-    document.getElementById('question').style.display='none';
+
+    document.getElementById('question').style.display = 'none';
     document.getElementById('please').style.display = 'block';
-    
+
+
+    audioContainer = document.getElementById('please');
+    audioElement = document.createElement('audio');
+    audioElement.controls = false; // Add controls for play, pause, etc.
+    audioElement.autoplay = true;
+    audioElement.loop=true;
+
+    // Create a source for the audio element
+    const source = document.createElement('source');
+    source.src = './cry-banana-cat.mp3'; // Specify the audio file path
+    source.type = 'audio/mp3'; // Specify the audio type
+
+    // Append the source to the audio element
+    audioElement.appendChild(source);
+
+    // Append the audio element to the container
+    audioContainer.appendChild(audioElement);
+
     // When the cat-crying image is fully loaded, add it to the image container
-    catCryingImage.onload = function() {
+    catCryingImage.onload = function () {
         imageContainer.appendChild(catCryingImage);
         // Hide the options container
         // document.getElementById('options').style.display = 'none';
