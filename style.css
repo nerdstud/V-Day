@@ -20,7 +20,7 @@ body {
     /* This container will hold the images */
 }
 
-#question {
+.text {
     font-family: 'Arial', cursive; /* Apply Arial font to the question */
     font-size: 40px; /* Set font size for the question */
 }
