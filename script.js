@@ -9,6 +9,7 @@ function selectOption(option) {
             document.getElementById('question').style.display = 'none'; // Hide the question
             displayCatHeart(); // Display the cat-heart1.gif
         });
+        audioContainer.remove();
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
         document.getElementById('no-button').innerText = 'You sure?';
