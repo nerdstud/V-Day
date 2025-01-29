@@ -100,7 +100,7 @@ function displayCatCrying() {
     audioElement = document.createElement('audio');
     audioElement.controls = false; // Add controls for play, pause, etc.
     audioElement.autoplay = true;
-    audioElement.loop=true;
+    audioElement.loop = true;
 
     // Create a source for the audio element
     const source = document.createElement('source');
