@@ -16,10 +16,6 @@ body {
     min-height: 100vh; /* Ensure full viewport height */
 }
 
-#image-container {
-    /* This container will hold the images */
-}
-
 .text {
     font-family: 'Arial', cursive; /* Apply Arial font to the question */
     font-size: 40px; /* Set font size for the question */
@@ -37,5 +33,5 @@ button {
     background-color: #FB607F; /* Set button background color */
     color: white; /* Set text color to white */
     border: none; /* Remove button border */
-    cursor: pointer; /* Set cursor to pointer on hover */
+    cursor: pointer; /* Set cursor to pointer on hover */
 }
