@@ -13,6 +13,7 @@ function selectOption(option) {
         // Change text on the "No" button to "You sure?"
         document.getElementById('no-button').innerText = 'You sure?';
         displayCatCrying(); // Display the cat-crying.gif
+        
         // Increase font size of "Yes" button
         var yesButton = document.getElementById('yes-button');
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
@@ -89,11 +90,15 @@ function displayCatCrying() {
     catCryingImage.src = 'cat-crying.gif'; // Assuming the cat-crying image is named "cat-crying.gif"
     // Set alternative text for the image (for accessibility)
     catCryingImage.alt = 'Cat Crying';
+    
+    document.getElementById('question').style.display='none';
+    document.getElementById('please').style.display = 'block';
+    
     // When the cat-crying image is fully loaded, add it to the image container
     catCryingImage.onload = function() {
         imageContainer.appendChild(catCryingImage);
         // Hide the options container
-        document.getElementById('options').style.display = 'none';
+        // document.getElementById('options').style.display = 'none';
     };
 }
 
